@@ -26,7 +26,9 @@ SECRET_KEY = '3tsyhidi0p)@qc7ygf%h$#!+_^f@7j-sg=sur1(ihjzizgscn&'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+AUTHENTICATION_BACKENDS = (
+    'users.views.CustomBackend',
+)
 
 # Application definition
 
@@ -129,3 +131,4 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS=[BASE_DIR,'static']
