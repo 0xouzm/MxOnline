@@ -6,7 +6,7 @@ from django.views.generic.base import View
 from django.contrib.auth.hashers import make_password
 
 from .models import UserProfile, EmailVerifyRecord
-from .forms import LoginForm, RegisterForm, ForgetForm,ModifyPwdForm
+from .forms import LoginForm, RegisterForm, ForgetForm, ModifyPwdForm
 from utils.email_send import send_register_email
 
 
@@ -45,6 +45,11 @@ class LoginView(View):
                 return render(request, 'login.html', {'msg': '用户名或密码错误!'})
         else:
             return render(request, 'login.html', {'login_form': login_form})
+
+
+class LogoutView(View):
+    def get(self, request):
+        pass
 
 
 class ActiveUserView(View):
@@ -112,15 +117,16 @@ class ResetView(View):
             return render(request, 'active_fail.html')
         return render(request, 'login.html')
 
+
 class ModifyView(View):
-    def post(self,request):
+    def post(self, request):
         modify_form = ModifyPwdForm(request.POST)
         email = request.POST.get('email', '')
         if modify_form.is_valid():
-            pwd1 = request.POST.get('password1','')
-            pwd2 = request.POST.get('password2','')
+            pwd1 = request.POST.get('password1', '')
+            pwd2 = request.POST.get('password2', '')
             if pwd1 != pwd2:
-                return render(request, 'password_reset.html', {'email': email,'msg':'密码不一致'})
+                return render(request, 'password_reset.html', {'email': email, 'msg': '密码不一致'})
             user = UserProfile.objects.get(email=email)
             user.password = make_password(pwd1)
             user.save()
