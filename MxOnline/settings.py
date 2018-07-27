@@ -12,10 +12,11 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 import sys
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0,os.path.join(BASE_DIR,'apps'))
-sys.path.insert(0,os.path.join(BASE_DIR,'extra_apps'))
+sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
+sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -26,6 +27,7 @@ SECRET_KEY = '3tsyhidi0p)@qc7ygf%h$#!+_^f@7j-sg=sur1(ihjzizgscn&'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
 AUTHENTICATION_BACKENDS = (
     'users.views.CustomBackend',
 )
@@ -81,20 +83,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'MxOnline.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':'mxonline',
-        'USER':'root',
-        'PASSWORD':'initiald',
-        'HOST':'localhost',
+        'NAME': 'mxonline',
+        'USER': 'root',
+        'PASSWORD': '123456',
+        'HOST': 'localhost',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -114,7 +114,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -128,9 +127,23 @@ USE_L10N = True
 
 USE_TZ = False
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS=[BASE_DIR,'static']
+STATICFILES_DIRS = [BASE_DIR, 'static']
+# dpsqcvkuumydbjgb
+
+# EMAIL_HOST='smtp.qq.com'
+# EMAIL_PORT = 465
+# EMAIL_HOST_USER = '344387990@qq.com'
+# EMAIL_HOST_PASSWORD = 'dpsqcvkuumydbjgb'
+# EMAIL_HOST_TLS = False
+# EMAIL_FROM = '344387990@qq.com'
+
+EMAIL_USE_SSL = True
+EMAIL_HOST = 'smtp.qq.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = '344387990@qq.com'
+EMAIL_HOST_PASSWORD = 'dpsqcvkuumydbjgb'  # QQ邮箱的独立授权码
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
