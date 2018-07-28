@@ -1,72 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9cd41fd4-a0ec-4f85-9e7d-bef4df5326f2" name="Default" comment="20180726">
-      <change afterPath="$PROJECT_DIR$/apps/organization/migrations/0004_auto_20180727_2043.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/org-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MxOnline/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MxOnline/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MxOnline/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MxOnline/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/organization/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/organization/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/organization/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/organization/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/utils/email_send.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/utils/email_send.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/Entity/2016/11/default_middile_14_20161113173158_261.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/Entity/2016/11/default_middile_14_20161113173158_261.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/Entity/2016/11/default_middile_1_20161113172604_856.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/Entity/2016/11/default_middile_1_20161113172604_856.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/Entity/ueditor/default_middile_13_20161113185849_453.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/Entity/ueditor/default_middile_13_20161113185849_453.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/banner/2016/11/57a801860001c34b12000460.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/banner/2016/11/57a801860001c34b12000460.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/banner/2016/11/57a801860001c34b12000460_z4Vb8zl.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/banner/2016/11/57a801860001c34b12000460_z4Vb8zl.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/banner/2016/11/57aa86a0000145c512000460.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/banner/2016/11/57aa86a0000145c512000460.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/banner/2016/11/57aa86a0000145c512000460_GXIBATC.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/banner/2016/11/57aa86a0000145c512000460_GXIBATC.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/banner/2016/11/57aa86a0000145c512000460_nMwvoQD.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/banner/2016/11/57aa86a0000145c512000460_nMwvoQD.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/course/resource/2016/11/curl_wget.rar" beforeDir="false" afterPath="$PROJECT_DIR$/media/course/resource/2016/11/curl_wget.rar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/course/resource/2016/11/media.zip" beforeDir="false" afterPath="$PROJECT_DIR$/media/course/resource/2016/11/media.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/courses/2016/11/540e57300001d6d906000338-240-135.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/courses/2016/11/540e57300001d6d906000338-240-135.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/courses/2016/11/540e57300001d6d906000338-240-135_MSIqfvw.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/courses/2016/11/540e57300001d6d906000338-240-135_MSIqfvw.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/courses/2016/11/540e57300001d6d906000338-240-135_Z3HIQ2t.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/courses/2016/11/540e57300001d6d906000338-240-135_Z3HIQ2t.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/courses/2016/11/540e57300001d6d906000338-240-135_mvvGYHL.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/courses/2016/11/540e57300001d6d906000338-240-135_mvvGYHL.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/courses/2016/11/540e57300001d6d906000338-240-135_n0L8vbw.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/courses/2016/11/540e57300001d6d906000338-240-135_n0L8vbw.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/courses/2016/11/540e57300001d6d906000338-240-135_wH52IED.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/courses/2016/11/540e57300001d6d906000338-240-135_wH52IED.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/courses/2016/11/57035ff200014b8a06000338-240-135.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/courses/2016/11/57035ff200014b8a06000338-240-135.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/courses/2016/11/57035ff200014b8a06000338-240-135_0nFiBSI.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/courses/2016/11/57035ff200014b8a06000338-240-135_0nFiBSI.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/courses/2016/11/57035ff200014b8a06000338-240-135_dHfj8Nq.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/courses/2016/11/57035ff200014b8a06000338-240-135_dHfj8Nq.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/courses/2016/11/default_middile_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/courses/2016/11/default_middile_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/courses/2016/11/mysql.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/courses/2016/11/mysql.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/courses/2016/12/57035ff200014b8a06000338-240-135_dHfj8Nq.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/courses/2016/12/57035ff200014b8a06000338-240-135_dHfj8Nq.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/courses/2016/12/mysql.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/courses/2016/12/mysql.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/courses/2016/12/python文件处理.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/courses/2016/12/python文件处理.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/courses/2016/12/python错误和异常.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/courses/2016/12/python错误和异常.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/courses/2016/12/python面向对象.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/courses/2016/12/python面向对象.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/courses/ueditor/57a801860001c34b12000460_z4Vb8zl_20161210233313_629.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/courses/ueditor/57a801860001c34b12000460_z4Vb8zl_20161210233313_629.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/courses/ueditor/57aa86a0000145c512000460_20161210234050_865.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/courses/ueditor/57aa86a0000145c512000460_20161210234050_865.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/courses/ueditor/aobama_20161113225004_372.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/courses/ueditor/aobama_20161113225004_372.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/courses/ueditor/aobama_20161113225044_773.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/courses/ueditor/aobama_20161113225044_773.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/image/2016/11/default_middile_18.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/image/2016/11/default_middile_18.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/image/2016/11/default_middile_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/image/2016/11/default_middile_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/image/2016/11/default_middile_2_WZ1559E.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/image/2016/11/default_middile_2_WZ1559E.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/image/2016/11/default_middile_7.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/image/2016/11/default_middile_7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/image/2016/11/default_middile_8.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/image/2016/11/default_middile_8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/image/2016/12/default.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/image/2016/12/default.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/org/2016/11/bjdx.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/org/2016/11/bjdx.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/org/2016/11/imooc.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/org/2016/11/imooc.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/org/2016/11/imooc_Gn1sRjp.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/org/2016/11/imooc_Gn1sRjp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/org/2016/11/imooc_OO2ykYP.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/org/2016/11/imooc_OO2ykYP.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/org/2016/11/imooc_V0TJOyb.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/org/2016/11/imooc_V0TJOyb.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/org/2016/11/imooc_Y2Tonsq.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/org/2016/11/imooc_Y2Tonsq.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/org/2016/11/imooc_klgAUn5.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/org/2016/11/imooc_klgAUn5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/org/2016/11/imooc_qEaMov1.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/org/2016/11/imooc_qEaMov1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/org/2016/11/njdx.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/org/2016/11/njdx.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/org/2016/11/qhdx-logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/org/2016/11/qhdx-logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/org/2016/12/bjdx.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/org/2016/12/bjdx.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/org/2016/12/bjdx_bcd0m07.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/org/2016/12/bjdx_bcd0m07.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/org/2016/12/bjdx_cCpdUw8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/org/2016/12/bjdx_cCpdUw8.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/org/2016/12/imooc_Gn1sRjp.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/org/2016/12/imooc_Gn1sRjp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/org/2016/12/imooc_klgAUn5.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/org/2016/12/imooc_klgAUn5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/teacher/2016/11/aobama.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/teacher/2016/11/aobama.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/teacher/2016/11/aobama_CXWwMef.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/teacher/2016/11/aobama_CXWwMef.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="9cd41fd4-a0ec-4f85-9e7d-bef4df5326f2" name="Default" comment="20180726" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +18,7 @@
     <session id="-586990583">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="3" />
@@ -504,7 +439,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532688889061</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="20180726">
+      <created>1532697441107</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1532697441107</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
