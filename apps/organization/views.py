@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from django.views.generic import View
+from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
+from django.http import JsonResponse, HttpResponse
 
 from .models import *
+from .forms import UserAskForm
 
 
 # Create your views here.
@@ -14,8 +17,40 @@ class OrgView(View):
     def get(self, request):
         # 课程机构
         all_orgs = CourseOrg.objects.all()
-        org_nums = all_orgs.count()
+        hot_orgs = all_orgs.order_by('-click_nums')[:3]
         # 城市
         all_citys = CityDict.objects.all()
+        # 城市筛选
+        city_id = request.GET.get('city', '')
+        if city_id:
+            all_orgs = all_orgs.filter(city_id=int(city_id))
+        # 类别筛选
+        category = request.GET.get('ct', '')
+        if category:
+            all_orgs = all_orgs.filter(category=category)
+        # 排序
+        sort = request.GET.get('sort', '')
+        if sort:
+            if sort == 'students':
+                all_orgs.order_by('-students')
+            elif sort == 'courses':
+                all_orgs.order_by('-course_nums')
 
+        org_nums = all_orgs.count()
+        try:
+            page = request.GET.get('page', 1)
+        except PageNotAnInteger:
+            page = 1
+        p = Paginator(all_orgs, 2, request=request)
+        orgs = p.page(page)
         return render(request, 'org-list.html', locals())
+
+
+class AddUserAskView(View):
+    def post(self, request):
+        userask_form = UserAskForm(request.POST)
+        if userask_form.is_valid():
+            user_ask = userask_form.save(commit=True)
+            return HttpResponse({'status': 'success'},content_type='application/json')
+        else:
+            return JsonResponse({'status': 'fail', 'msg': '添加出错'})
