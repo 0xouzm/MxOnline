@@ -21,7 +21,8 @@ class CourseOrg(models.Model):
     '''课程机构'''
     name = models.CharField(max_length=50, verbose_name='机构名称')
     desc = models.TextField(verbose_name='机构描述')
-    category = models.CharField(default='pxjg',max_length=20,choices=(('pxjg','培训机构'),('gr','个人'),('gx','高校')),verbose_name='机构类别')
+    category = models.CharField(default='pxjg', max_length=20, choices=(('pxjg', '培训机构'), ('gr', '个人'), ('gx', '高校')),
+                                verbose_name='机构类别')
     click_nums = models.IntegerField(default=0, verbose_name='点击数')
     fav_nums = models.IntegerField(default=0, verbose_name='收藏数')
     image = models.ImageField(upload_to='org/%Y/%m', verbose_name='logo')
@@ -38,6 +39,8 @@ class CourseOrg(models.Model):
     def __str__(self):
         return self.name
 
+    def get_teacher_nums(self):
+        return self.teacher_set.all().count()
 
 class Teacher(models.Model):
     org = models.ForeignKey(CourseOrg, verbose_name='所属机构')
@@ -49,6 +52,7 @@ class Teacher(models.Model):
     click_nums = models.IntegerField(default=0, verbose_name='点击数')
     fav_nums = models.IntegerField(default=0, verbose_name='收藏数')
     add_time = models.DateTimeField(default=datetime.now)
+    image = models.ImageField(upload_to='teacher/%Y/%m', verbose_name='头像', max_length=100,default='')
 
     class Meta:
         verbose_name = '教师'

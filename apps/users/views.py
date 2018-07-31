@@ -46,11 +46,6 @@ class LoginView(View):
             return render(request, 'login.html', {'login_form': login_form})
 
 
-class LogoutView(View):
-    def get(self, request):
-        pass
-
-
 class ActiveUserView(View):
     def get(self, request, active_code):
         all_record = EmailVerifyRecord.objects.filter(code=active_code)

@@ -3,23 +3,20 @@
 {% block title %}课程机构列表{% endblock %}
 {% block custom_header %}
     <script>
+        $.ajaxSetup({
+            data: {csrfmiddlewaretoken: '{{ csrf_token }}'},
+        });
         $(function () {
             $('#jsStayBtn').on('click', function () {
-                $.ajax({
-                    cache: false,
-                    type: "POST",
-                    url: "/org/add_ask/",
-                    data: $('#jsStayForm').serialize(),
-                    async: true,
-                    success: function (data) {
-                        if (data.status == 'success') {
-                            $('#jsStayForm')[0].reset();
-                            alert("提交成功")
-                        } else if (data.status == 'fail') {
-                            $('#jsCompanyTips').html(data.msg)
-                        }
-                    },
-                });
+                $.post("{% url 'org:add_ask' %}", $('#jsStayForm').serialize(), function (data) {
+                    if (data.status == 'success') {
+                        $('#jsStayForm')[0].reset();
+                        window.alert("提交成功");
+                         $('#jsCompanyTips').html('')
+                    } else if (data.status == 'fail') {
+                        $('#jsCompanyTips').html(data.msg)
+                    }
+                })
             });
         })
     </script>
@@ -28,7 +25,7 @@
     <section>
         <div class="wp">
             <ul class="crumbs">
-                <li><a href="index.html">首页</a>></li>
+                <li><a href="/">首页</a>></li>
                 <li>课程机构</li>
             </ul>
         </div>
@@ -89,14 +86,14 @@
                         {% for org in orgs.object_list %}
                             <dl class="des difdes">
                                 <dt>
-                                    <a href="org-detail-homepage.html">
+                                    <a href="{% url 'org:org_home' org.id %}">
                                         <img width="200" height="120" class="scrollLoading"
                                              data-url="{{ MEDIA_URL }}{{ org.image }}"/>
                                     </a>
                                 </dt>
                                 <dd>
                                     <div class="clearfix">
-                                        <a href="org-detail-homepage.html">
+                                        <a href="{% url 'org:org_home' org.id %}">
                                             <h1>{{ org.name }}</h1>
                                             <div class="pic fl">
 
