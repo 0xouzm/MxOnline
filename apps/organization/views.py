@@ -2,10 +2,12 @@ from django.shortcuts import render
 from django.views.generic import View
 from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
 from django.http import JsonResponse, HttpResponse
+from django.db.models import Q
 
 from .models import *
 from .forms import UserAskForm
 from operation.models import UserFavorite
+from courses.models import Course
 
 
 # Create your views here.
@@ -29,13 +31,19 @@ class OrgView(View):
         category = request.GET.get('ct', '')
         if category:
             all_orgs = all_orgs.filter(category=category)
+        # 搜索
+        search_keywords = request.GET.get('keywords', '')
+        if search_keywords:
+            all_orgs = all_orgs.filter(
+                Q(name__icontains=search_keywords) | Q(desc__icontains=search_keywords))
+
         # 排序
         sort = request.GET.get('sort', '')
         if sort:
             if sort == 'students':
-                all_orgs.order_by('-students')
+                all_orgs = all_orgs.order_by('-students')
             elif sort == 'courses':
-                all_orgs.order_by('-course_nums')
+                all_orgs = all_orgs.order_by('-course_nums')
 
         org_nums = all_orgs.count()
         try:
@@ -135,6 +143,34 @@ class AddFavView(View):
 
 
 class TeacherListView(View):
-    def get(self,request):
+    def get(self, request):
         all_teacher = Teacher.objects.all()
-        return render(request,'teachers-list.html',locals())
+        # 搜索
+        search_keywords = request.GET.get('keywords', '')
+        if search_keywords:
+            all_teacher = all_teacher.filter(
+                Q(name__icontains=search_keywords) | Q(work_company__icontains=search_keywords) | Q(
+                    work_position__icontains=search_keywords))
+
+        sort = request.GET.get('sort', '')
+        if sort:
+            if sort == 'hot':
+                all_teacher = all_teacher.order_by('-click_nums')
+
+        sorted_teachers = Teacher.objects.all().order_by('-click_nums')[:3]
+
+        try:
+            page = request.GET.get('page', 1)
+        except PageNotAnInteger:
+            page = 1
+        p = Paginator(all_teacher, 1, request=request)
+        teachers = p.page(page)
+        return render(request, 'teachers-list.html', locals())
+
+
+class TeacherDetailView(View):
+    def get(self, request, teacher_id):
+        teacher = Teacher.objects.get(id=int(teacher_id))
+        all_courses = Course.objects.filter(teacher=teacher)
+        sorted_teachers = Teacher.objects.all().order_by('-click_nums')[:3]
+        return render(request, 'teacher-detail.html', locals())

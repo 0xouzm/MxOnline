@@ -1,6 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}课程机构列表{% endblock %}
+{% block custom_bread %}
+    <section>
+        <div class="wp">
+            <ul class="crumbs">
+                <li><a href="/">首页</a>></li>
+                <li>课程机构</li>
+            </ul>
+        </div>
+    </section>
+{% endblock %}
 {% block custom_header %}
     <script>
         $.ajaxSetup({
@@ -21,17 +31,6 @@
         })
     </script>
 {% endblock %}
-{% block custom_bread %}
-    <section>
-        <div class="wp">
-            <ul class="crumbs">
-                <li><a href="/">首页</a>></li>
-                <li>课程机构</li>
-            </ul>
-        </div>
-    </section>
-{% endblock %}
-
 {% block content %}
     <section>
         <div class="wp butler_list_box list">
