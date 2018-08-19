@@ -26,7 +26,6 @@ function sendCodeChangeEmail($btn){
                 Dml.fun.showErrorTips($('#jsChangeEmailTips'), "邮箱验证码已发送");
             }else if(data.status == 'failure'){
                  Dml.fun.showValidateError($('#jsChangeEmail'), "邮箱验证码发送失败");
-            }else if(data.status == 'success'){
             }
         },
         complete: function(XMLHttpRequest){
