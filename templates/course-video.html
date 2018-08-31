@@ -61,7 +61,8 @@
                             <ul class="course-menu clearfix">
                                 <li><a class="ui-tabs-active active" id="learnOn"
                                        href="{% url 'course:course_info' c.id %}"><span>章节</span></a></li>
-                                <li><a id="commentOn" class="" href="{% url 'course:course_comment' c.id %}"><span>评论</span></a></li>
+                                <li><a id="commentOn" class=""
+                                       href="{% url 'course:course_comment' c.id %}"><span>评论</span></a></li>
                             </ul>
                         </div>
                         <div id="notice" class="clearfix">
@@ -98,7 +99,8 @@
                                 <ul class="downlist">
                                     {% for resource in all_resources %}
                                         <li>
-                                            <span><i class="aui-iconfont aui-icon-file"></i>&nbsp;&nbsp;{{ resource.name }}</span>
+                                            <span><i
+                                                    class="aui-iconfont aui-icon-file"></i>&nbsp;&nbsp;{{ resource.name }}</span>
                                             <a href="{{ MEDIA_URL }}{{ resource.download }}" class="downcode"
                                                target="_blank" download="" data-id="274" title="">下载</a>
                                         </li>
@@ -110,11 +112,11 @@
                             <div class="box mb40">
                                 <h4>讲师提示</h4>
                                 <div class="teacher-info">
-                                    <a href="/u/315464/courses?sort=publish" target="_blank">
+                                    <a href="{% url 'org:teacher_detail' c.teacher.id %}" target="_blank">
                                         <img src="{{ MEDIA_URL }}{{ c.teacher.image }}" width='80' height='80'/>
                                     </a>
                                     <span class="tit">
-          <a href="/u/315464/courses?sort=publish" target="_blank">{{ c.teacher.name }}</a>
+          <a href="{% url 'org:teacher_detail' c.teacher.id %}" target="_blank">{{ c.teacher.name }}</a>
         </span>
                                     <span class="job">{{ c.teacher.work_position }}</span>
                                 </div>
@@ -140,43 +142,15 @@
                                          style="display: block">
                                         <!-- img 200 x 112 -->
                                         <ul class="other-list">
-
-                                            <li class="curr">
-                                                <a href="course-detail.html" target="_blank">
-                                                    <img src="../media/courses/2016/11/540e57300001d6d906000338-240-135_n0L8vbw.jpg"
-                                                         alt="django与vuejs实战项目2">
-                                                    <span class="name autowrap">django与vuejs实战项目2</span>
-                                                </a>
-                                            </li>
-
-                                            <li class="curr">
-                                                <a href="course-detail.html" target="_blank">
-                                                    <img src="../media/courses/2016/12/python面向对象.jpg" alt="python面向对象">
-                                                    <span class="name autowrap">python面向对象</span>
-                                                </a>
-                                            </li>
-
-                                            <li class="curr">
-                                                <a href="course-detail.html" target="_blank">
-                                                    <img src="../media/courses/2016/12/python文件处理.jpg" alt="python文件处理">
-                                                    <span class="name autowrap">python文件处理</span>
-                                                </a>
-                                            </li>
-
-                                            <li class="curr">
-                                                <a href="course-detail.html" target="_blank">
-                                                    <img src="../media/courses/2016/11/mysql.jpg" alt="django入门">
-                                                    <span class="name autowrap">django入门</span>
-                                                </a>
-                                            </li>
-
-                                            <li class="curr">
-                                                <a href="course-detail.html" target="_blank">
-                                                    <img src="../media/courses/2016/12/mysql.jpg" alt="xadmin进阶开发">
-                                                    <span class="name autowrap">xadmin进阶开发</span>
-                                                </a>
-                                            </li>
-
+                                            {% for relate_c in relate_courses %}
+                                                <li class="curr">
+                                                    <a href="{% url 'course:course_detail' relate_c.id %}" target="_blank">
+                                                        <img src="{{ MEDIA_URL }}{{ relate_c.image }}"
+                                                             alt="{{ relate_c.name }}">
+                                                        <span class="name autowrap">{{ relate_c.name }}</span>
+                                                    </a>
+                                                </li>
+                                            {% endfor %}
                                         </ul>
                                     </div>
                                     <div class="cp-tab-pannel js-comp-tab-pannel" data-pannel="plan">

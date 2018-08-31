@@ -1,5 +1,6 @@
 import json
 
+from django.core.paginator import PageNotAnInteger,Paginator
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.backends import ModelBackend
@@ -7,11 +8,12 @@ from django.db.models import Q
 from django.views.generic.base import View
 from django.contrib.auth.hashers import make_password
 from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
+from django.core.urlresolvers import reverse
 
 from courses.models import Course
-from operation.models import UserCourse, UserFavorite
+from operation.models import UserCourse, UserFavorite, UserMessage
 from organization.models import CourseOrg, Teacher
-from .models import UserProfile, EmailVerifyRecord
+from .models import UserProfile, EmailVerifyRecord, Banner
 from .forms import LoginForm, RegisterForm, ForgetForm, ModifyPwdForm, UploadImageForm, UserInfoForm
 from utils.email_send import send_register_email
 from utils.mixin_utils import LoginRequiredMixin
@@ -47,7 +49,7 @@ class LoginView(View):
             if user:
                 if user.is_active:
                     login(request, user)
-                    return render(request, 'index.html')
+                    return HttpResponseRedirect(reverse('index'))
                 else:
                     return render(request, 'login.html', {'msg': '用户未激活!'})
             else:
@@ -59,7 +61,7 @@ class LoginView(View):
 class LogoutView(View):
     def get(self, request):
         logout(request)
-        from django.core.urlresolvers import reverse
+
         return HttpResponseRedirect(reverse('index'))
 
 
@@ -277,4 +279,46 @@ class MyMessageView(LoginRequiredMixin, View):
     '''
 
     def get(self, request):
-        return render(request, 'usercenter-message.html', locals())
+        all_message = UserMessage.objects.filter(user= request.user.id)
+
+        # 用户进入个人中心消息页面，清空未读消息记录
+        all_unread_messages = UserMessage.objects.filter(user=request.user.id, has_read=False)
+        for unread_message in all_unread_messages:
+            unread_message.has_read = True
+            unread_message.save()
+        # 对课程机构进行分页
+        # 尝试获取前台get请求传递过来的page参数
+        # 如果是不合法的配置参数默认返回第一页
+        try:
+            page = request.GET.get('page', 1)
+        except PageNotAnInteger:
+            page = 1
+        # 这里指从allorg中取五个出来，每页显示5个
+        p = Paginator(all_message, 4)
+        messages = p.page(page)
+        return  render(request, "usercenter-message.html", {
+        "messages":messages,
+        })
+
+class IndexView(View):
+    def get(self,request):
+        all_banners = Banner.objects.all().order_by('index')
+        courses = Course.objects.filter(is_banner=False)[:6]
+        banner_courses = Course.objects.filter(is_banner=True)[:3]
+        course_orgs = CourseOrg.objects.all()[:15]
+        return render(request,'index.html',locals())
+
+
+
+def page_not_found(request):
+    from django.shortcuts import render_to_response
+    response = render_to_response('404.html',{})
+    response.status_code = 404
+    return response
+
+
+def page_error(request):
+    from django.shortcuts import render_to_response
+    response = render_to_response('500.html',{})
+    response.status_code = 500
+    return response

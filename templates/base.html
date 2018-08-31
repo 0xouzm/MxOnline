@@ -26,7 +26,8 @@
 
                         <div class="personal">
                             <dl class="user fr">
-                                <dd>{{ request.user }}<img class="down fr" src="/static/images/top_down.png"/></dd>
+                                <dd>{{ request.user }}<img class="down fr" src="{% static 'images/top_down.png' %}"/>
+                                </dd>
                                 <dt><img width="20" height="20" src="{{ MEDIA_URL }}{{ request.user.image }}"/>
                                 </dt>
                             </dl>
@@ -36,7 +37,7 @@
                                              src="{{ MEDIA_URL }}{{ request.user.image }}"/>
                                     </dt>
                                     <dd>
-                                        <h2>django</h2>
+                                        <h2>{{ user.nick_name }}</h2>
                                         <p>{{ request.user }}</p>
                                     </dd>
                                 </dl>
@@ -46,7 +47,9 @@
                                 </div>
                             </div>
                         </div>
-
+                        <a href="{% url 'users:mymessage' %}">
+                            <div class="msg-num"><span id="MsgNum">{{ request.user.unread_nums }}</span></div>
+                        </a>
 
                     </div>
                 </div>
@@ -66,7 +69,7 @@
 
             <div class="middle">
                 <div class="wp">
-                    <a href="index.html"><img class="fl" src="{% static 'images/logo.jpg' %}"/></a>
+                    <a href="{% url 'index' %}"><img class="fl" src="{% static 'images/logo.jpg' %}"/></a>
                     <div class="searchbox fr">
                         <div class="selectContainer fl">
                             <span class="selectOption" id="jsSelectOption" data-value="course">
@@ -98,7 +101,8 @@
                             <li {% if request.path|slice:'12' == '/org/teacher' %}class="active"{% endif %}>
                                 <a href="{% url 'org:teacher_list' %}">授课教师</a>
                             </li>
-                            <li {% if request.path|slice:'9' == '/org/list' %}class="active"{% endif %}><a href="{% url 'org:org_list' %}">授课机构</a></li>
+                            <li {% if request.path|slice:'9' == '/org/list' %}class="active"{% endif %}><a
+                                    href="{% url 'org:org_list' %}">授课机构</a></li>
                         </ul>
                     </div>
                 </div>
@@ -112,7 +116,7 @@
     <section>
         <div class="wp">
             <ul class="crumbs">
-                <li><a href="index.html">首页</a>></li>
+                <li><a href="{% url 'index' %}">首页</a>></li>
             </ul>
         </div>
     </section>
@@ -134,8 +138,8 @@
         </div>
         <p class="line"></p>
         <div class="wp clear">
-            <span class="fl">? 2016 www.projectsedu.com 慕学在线-在线学习交流平台 保留所有权利</span>
-            <span class="fr">copyright ? 2016 ICP备案证书号：蜀ICP备xxxxx号-1</span>
+            <span class="fl">? 2018 www.wjj0315.top 在线学习交流平台 保留所有权利</span>
+            <span class="fr">copyright ? 2018 ICP备案证书号：蜀ICP备xxxxx号-1</span>
         </div>
     </div>
 </footer>
@@ -155,7 +159,7 @@
 <script src="{% static 'js/plugins/queryCity/js/public.js' %}" type="text/javascript"></script>
 <script src="{% static 'js/unslider.js' %}" type="text/javascript"></script>
 <script src="{% static 'js/plugins/jquery.scrollLoading.js' %}" type="text/javascript"></script>
-<script src="{% static 'js/deco-common.js' %}" type="text/javascript"></script>
+
 
 </body>
 </html>

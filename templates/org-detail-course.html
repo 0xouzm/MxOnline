@@ -9,12 +9,12 @@
         <div class="brief group_list">
             {% for c in all_courses %}
                 <div class="module1_5 box">
-                    <a class="comp-img-box" href="course-detail.html">
+                    <a class="comp-img-box" href="{% url 'course:course_detail' c.id %}">
 
                         <img width="214" height="195" src="{{ MEDIA_URL }}{{ c.image }}"/>
                     </a>
                     <div class="des">
-                        <a href="course-detail.html"><h2>{{ c.name }}</h2></a>
+                        <a href="{% url 'course:course_detail' c.id %}"><h2>{{ c.name }}</h2></a>
                         <span class="fl">课时：<i class="key">{{ c.learn_times }}</i></span>
                         <span class="fr">学习人数：{{ c.students }}</span>
                     </div>
