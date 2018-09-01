@@ -152,7 +152,6 @@ class UserinfoView(LoginRequiredMixin, View):
     '''
     用户个人信息
     '''
-
     def get(self, request):
         return render(request, 'usercenter-info.html', {})
 
