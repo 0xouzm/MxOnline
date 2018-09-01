@@ -30,7 +30,7 @@ def send_register_email(email, send_type='register'):
 
     if send_type == 'register':
         email_title = '在线注册激活链接'
-        email_body = '请点击链接激活账号:http://127.0.0.1:8000/active/{}'.format(code)
+        email_body = '请点击链接激活账号:http://www.wjj0315.top/active/{}'.format(code)
 
         send_status = send_mail(email_title, email_body, EMAIL_HOST_USER, [email])
         if send_status:
@@ -38,7 +38,7 @@ def send_register_email(email, send_type='register'):
 
     elif send_type == 'forget':
         email_title = '密码重置链接'
-        email_body = '请点击链接重置密码:http://127.0.0.1:8000/reset/{}'.format(code)
+        email_body = '请点击链接重置密码:http://www.wjj0315.top/reset/{}'.format(code)
         send_status = send_mail(email_title, email_body, EMAIL_HOST_USER, [email])
         if send_status:
             pass
