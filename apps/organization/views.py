@@ -8,7 +8,7 @@ from .models import *
 from .forms import UserAskForm
 from operation.models import UserFavorite
 from courses.models import Course
-
+from utils.mixin_utils import LoginRequiredMixin
 
 # Create your views here.
 
@@ -200,7 +200,7 @@ class TeacherListView(View):
         return render(request, 'teachers-list.html', locals())
 
 
-class TeacherDetailView(View):
+class TeacherDetailView(LoginRequiredMixin,View):
     def get(self, request, teacher_id):
         teacher = Teacher.objects.get(id=int(teacher_id))
         all_courses = Course.objects.filter(teacher=teacher)
